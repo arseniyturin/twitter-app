@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="slash_menu">
+<h1>Tweets</h1>
+</div>
+{% for i in result %}
+  <div>
+    <a href="/users/{{i[0]}}"><img src="{{i[2]}}" /> - {{i[1]}}</a><br />
+    {{i[3]}}<br />
+    {{i[4]}}
+  </div>
+{% endfor %}
+
+{% endblock %}

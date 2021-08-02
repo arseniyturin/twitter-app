@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for i in result['data'] %}
+  <div style="margin:10px;padding:10px;border:1px #f0f0f0 solid;">
+    {% if i.get('referenced_tweets', 0) != 0 %}
+    <p>{{i['referenced_tweets'][0]['type']}}</p>
+    {% endif %}
+    {{i['text']}}
+
+  </div>
+{% endfor %}
+
+{% endblock %}

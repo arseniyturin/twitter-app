@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="slash_menu">
+<h1>Settings</h1>
+</div>
+<div style="width:500px;background-color:#f2f6f9;padding:20px;border-radius:6px;">
+<form action="/settings/update_account" method="POST">
+  <div style="width:460px;margin:10px 0;">
+  <label>
+    Your username
+    <input type="text" name="username" value="{{account['username']}}" />
+  </label>
+  </div>
+  <div style="width:460px;margin:10px 0;">
+  <label>
+    Bearer Key
+    <textarea name="bearer_key">{{account['bearer_key']}}</textarea>
+  </label>
+  </div>
+<input type="submit" value="save" />
+</form>
+</div>
+<style>
+  .user {
+    padding: 20px;
+    margin: 5px;
+    display: flex;
+  }
+  </style>
+{% for follower in followers %}
+<a href=""><div class="user">
+  <div><img src="{{follower[4]}}" /></div><div>{{follower[1]}}</div>
+</div></a>
+{% endfor %}
+
+{% endblock %}

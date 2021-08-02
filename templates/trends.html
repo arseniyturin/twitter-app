@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="slash_menu">
+<h1>Trends</h1>
+</div>
+<script type="text/javascript">
+
+//  var xobj = new XMLHttpRequest();
+//      xobj.overrideMimeType("application/json");
+//      xobj.open('GET', 'file.json', true);
+
+let result = ajax(data='', url='./static/brown.json', method='GET');
+</script>
+{% endblock %}
