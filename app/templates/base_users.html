@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="slash_menu">
+<h1><a href="/users">Users</a> / <a href="/users/{{username}}">{{title}}</a></h1>
+</div>
+<div id="sub_menu">
+  <a {{ 'class="active"' | safe if sub_menu=='followers' }} href="/users/{{username}}/followers">followers</a>
+  <a {{ 'class="active"' | safe if sub_menu=='following' }} href="/users/{{username}}/following">following</a>
+  <a {{ 'class="active"' | safe if sub_menu=='mutual' }} href="/users/{{username}}/mutual">mutual</a>
+  <a {{ 'class="active"' | safe if sub_menu=='timeline' }} href="/users/{{username}}/timeline">timeline</a>
+</div>
+{% block users_data %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="slash_menu">
+<h1>Tweets</h1>
+</div>
+{% for i in result %}
+  <div class="tweet">
+    <div class="tweet-avatar">
+    <a href="/users/{{i[0]}}"><img src="{{i[2]}}" /></a>
+    </div>
+    <div class="tweet-text">{{i[3]}}</div>
+  </div>
+{% endfor %}
+
+{% endblock %}

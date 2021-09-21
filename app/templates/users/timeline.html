@@ -1,0 +1,11 @@
+{% extends "base_users.html" %}
+{% block users_data %}
+{% for i in result %}
+<div class="tweet">
+  <div class="tweet-avatar">
+  <a href="/users/{{ user[2] }}"><img src="{{ user[4] }}" /></a>
+  </div>
+  <div class="tweet-text">{{i[1]}}</div>
+</div>
+{% endfor %}
+{% endblock %}

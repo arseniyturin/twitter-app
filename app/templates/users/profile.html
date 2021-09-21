@@ -1,0 +1,14 @@
+{% extends "base_users.html" %}
+
+{% block users_data %}
+<div class="user-profile">
+  <div class="user-profile-avatar"><img alt="{{user[1]}}" src="{{user[4]}}" /></div>
+  <div class="user-profile-description">{{user[3]}}</div>
+</div>
+<div style="padding: 0 17px; font-size: 16px;">
+  <p><b>{{user[7]}}</b> tweets - <b>{{user[7]}}</b> followers - <b>{{user[7]}}</b> following</p>
+<h2>Topics</h2>
+{{ ', '.join(topics.keys()) }}
+</div>
+
+{% endblock %}
